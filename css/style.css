@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Roboto+Mono&display=swap');
+
+
+
+body {
+    width: auto;
+    height: 100vh;
+    box-sizing: border-box;
+    position:relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Roboto Mono', monospace, 'Noto Sans KR', sans-serif;
+    
+}
+
+/* #login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top: 30px;
+    z-index: 3;
+    width: 300px;
+    height: 40px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    transition: 0.5s;
+    box-shadow: 1px 2px 2px white;
+}
+
+#login-form input {
+    background-color: transparent;
+    width: 60%;
+    color:white;
+    border:none;
+}
+
+#login-form input::placeholder {
+    color: green;
+}
+
+#login-form button {
+    border:none;
+    background-color: transparent;
+    color: green;
+    border-bottom: 1px solid white;
+} */
+
+.hidden {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    font-size: 25px;;
+}
+
+.menu2 {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: flex-end;
+}
+#clock {
+
+    z-index: 3;
+    color:white;
+
+}
+
+#greeting {
+    z-index: 3;
+    color: white;
+    position: absolute;
+    left: 40%;
+    font-size: 50px;
+    top: 0%;
+}
+
+#quote {
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+#weather {
+    z-index: 10;
+    color:white;
+    
+}
+
+
+#todo-form input {
+    z-index: 10;
+    border:none;
+    width: 300px;
+    height: 30px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    color: green;
+}
+
+#todo-form input::placeholder {
+    color:green;
+    font: 'Roboto Mono';
+}
+
+#todo-list {
+    height: auto;
+    width: 60%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.items {
+    color:white;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    transition: 0.5s;
+    animation: animateColor 2.5s linear infinite;
+    position:relative;
+    /* overflow: hidden; */
+}
+@keyframes animateColor {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+}
+
+.items::before {
+    content: "toDo!";
+    display: flex;
+    width: auto;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: -25px;
+    color:green;
+}
+
+
+.items::after {
+    content:"more toDo!";
+    position:absolute;
+    bottom: 60px;
+    width: 100px;
+    height: 50px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    right: 10px;
+    transition: 0.5s;
+    visibility: hidden;
+    animation: jump 1s linear infinite;
+    animation-delay: 1.5s;
+}
+@keyframes jump {
+    0%, 100% {
+        transform:translateY(0)
+    }
+    50% {
+        transform: translateY(10px)
+    }
+}
+
+.items:hover {
+    height: 50px;
+    color:green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.items:hover + .items::after {
+    visibility: visible;
+    color:white;
+}
+.items span, 
+.items button{
+    z-index: 5;
+    border: none;
+    background-color: transparent;
+}
+.items > div {
+    width: 10%;
+    height: 100%;
+    background-color: black;
+    /* border: 1px solid white; */
+    position: absolute;
+    border-radius: 8px;
+    left:0px;
+    transition: 0.5s;
+    visibility: hidden;
+}
+.items:hover > div {
+    width: 100%;
+    border: 1px solid green;
+    visibility: visible;
+    
+}
+
+.items:hover > div::before {
+    content:"";
+    width: 0;
+    height: 0;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-left: 20px solid white;
+    border-right: 20px solid transparent;
+    position: absolute;
+    left: -50px;
+    top: 15px;
+    transition: 0.5s;
+    animation: animatePointer 1s linear infinite;
+}
+
+@keyframes animatePointer {
+    0%,100%{
+        transform:translateX(0px)
+    }
+    50% {
+        transform:translateX(-10px)
+    }
+}
+/* 
+.items::after {
+    content: "⌨";
+    display: flex;
+    justify-content: center;
+    /* align-items: flex-start; */
+    /* width: 100%;
+    height: 20px;
+    position: absolute;
+    bottom: -21px;
+    font-size: larger;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    transform-origin: top;
+    transform: skewX(-50deg);
+    background-color: black; */
+
